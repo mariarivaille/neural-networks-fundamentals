@@ -1,0 +1,6 @@
+order:
+  - 0. Warmup
+  - 1. Preparation
+  - 2. Fully Connected NNs
+  - 3. Deep Fully Connected NNs
+  - 4. Convolutional NNs
