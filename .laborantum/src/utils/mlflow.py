@@ -285,6 +285,8 @@ def plot_training_curves(logger, history, title):
             loss_ax.set_title(f'{title}: {loss_name}')
             loss_ax.set_xlabel('epoch')
             loss_ax.set_ylabel(loss_name)
+            max_loss_value = max(train_loss_values + valid_loss_values)
+            loss_ax.set_ylim(top=max_loss_value * 1.05, bottom=0)
             loss_ax.grid(True, alpha=0.3)
             loss_ax.legend()
             logger.log_figure(loss_fig, f'figures/{loss_name}_curves.png')

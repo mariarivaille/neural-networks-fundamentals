@@ -28,7 +28,7 @@ class SimpleFCNN(torch.nn.Module):
         # Perform postprocessing after we get the output
         self.postprocessing(batch)
         
-        return batch['signals']['output']
+        return batch
     
     def postprocessing(self, batch):
         
