@@ -1,0 +1,1 @@
+model.0: Linear(784, 256) | model.1: LeakyReLU | model.2: Linear(256, 128) | model.3: LeakyReLU | model.4: Linear(128, 10)

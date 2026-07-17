@@ -1,0 +1,1 @@
+model.0: Linear(784, 784) | model.1: ReLU | model.2: Linear(784, 10)
