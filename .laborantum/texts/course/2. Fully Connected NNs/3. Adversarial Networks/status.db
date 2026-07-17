@@ -1,0 +1,375 @@
+{
+    "correct": 1,
+    "testStatus": [
+        {
+            "name": "root -> seed_check -> python.random -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> python.random -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> python.random -> 2",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> python.random -> 3",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> numpy.random.rand",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> torch.rand",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> torch.backends.cudnn.deterministic",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> noise_shape -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> noise_dtype",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> image_shape -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> image_shape -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> image_dtype",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> label_dtype",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> noise_mean",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> image_mean",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> data -> noise",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> data -> image",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> signals -> generated",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> signals -> discriminator_scores",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> signals -> fake_scores",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> signals -> discriminator_logits",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> signals -> fake_logits",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> signals -> real_scores",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> signals -> real_logits",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> postprocessed -> discriminator_score",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> postprocessed -> fake_score",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> postprocessed -> discriminator_probability",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> postprocessed -> fake_probability",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> postprocessed -> real_score",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> postprocessed -> real_probability",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> generated_shape -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> generated_shape -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> discriminator_logits_shape -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> fake_logits_shape -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> real_logits_shape -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> bridge_class",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> loss_names -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> metric_names -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_class",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> lr",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> betas -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> betas -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> eps",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> weight_decay",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> amsgrad",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> maximize",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> foreach",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> capturable",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> differentiable",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> fused",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> decoupled_weight_decay",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_group_lrs -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_group_lrs -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> test_loss_val -> classification",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> test_metrics_val -> discriminator_accuracy -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> test_metrics_val -> discriminator_accuracy -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_batch",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_batch",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_gan_loss_history -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_gan_loss_history -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_gan_loss_history -> 2",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_gan_loss_history -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_gan_loss_history -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_gan_loss_history -> 2",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_discriminator_accuracy_history -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_discriminator_accuracy_history -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_discriminator_accuracy_history -> 2",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_discriminator_accuracy_history -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_discriminator_accuracy_history -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_discriminator_accuracy_history -> 2",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> generated_visualization_shape -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> generated_visualization_shape -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> generated_visualization_shape -> 2",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> generated_visualization_mean",
+            "ok": true,
+            "status": "OK"
+        }
+    ]
+}

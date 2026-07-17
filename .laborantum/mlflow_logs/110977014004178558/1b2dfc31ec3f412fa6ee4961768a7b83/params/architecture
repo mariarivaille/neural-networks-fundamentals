@@ -1,0 +1,1 @@
+generator_discriminator_bridge: GradientReversalLayer | generator.0: Linear(256, 512) | generator.1: LeakyReLU | generator.2: Linear(512, 784) | generator.3: Tanh | discriminator.0: Linear(784, 512) | discriminator.1: LeakyReLU | discriminator.2: Linear(512, 256) | classifier: Linear(256, 1)
