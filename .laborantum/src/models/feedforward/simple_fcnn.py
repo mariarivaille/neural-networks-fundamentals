@@ -6,7 +6,6 @@ class SimpleFCNN(torch.nn.Module):
             channels=None,
             n_classes=10,
             activation=torch.nn.ReLU):
-        ...
         super().__init__()
 
         if channels is None:

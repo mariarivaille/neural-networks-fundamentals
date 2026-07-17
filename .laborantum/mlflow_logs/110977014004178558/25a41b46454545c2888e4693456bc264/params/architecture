@@ -1,0 +1,1 @@
+encoder.0: Linear(784, 256) | encoder.1: LeakyReLU | encoder.2: Linear(256, 128) | decoder.0: Linear(128, 256) | decoder.1: LeakyReLU | decoder.2: Linear(256, 784)

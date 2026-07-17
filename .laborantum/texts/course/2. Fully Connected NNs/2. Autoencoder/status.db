@@ -1,0 +1,245 @@
+{
+    "correct": 1,
+    "testStatus": [
+        {
+            "name": "root -> seed_check -> python.random -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> python.random -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> python.random -> 2",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> python.random -> 3",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> numpy.random.rand",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> torch.rand",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> seed_check -> torch.backends.cudnn.deterministic",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> X_train.dtype",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> X_valid.dtype",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> y_train.dtype",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> y_valid.dtype",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> X_train.shape -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> X_train.shape -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> X_valid.shape -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> X_valid.shape -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> X_train.mean",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> X_valid.mean",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> data -> image",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> data -> label",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> check_batch -> signals -> reconstruction",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> loss_names -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_class",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> lr",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> betas -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> betas -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> eps",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> weight_decay",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> amsgrad",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> maximize",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> foreach",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> capturable",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> differentiable",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> fused",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> optimizer_defaults -> decoupled_weight_decay",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> scheduler_class",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> test_loss_val -> mae",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_batch",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_batch",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_mae_history -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_mae_history -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> train_mae_history -> 2",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_mae_history -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_mae_history -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> valid_mae_history -> 2",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> reconstruction_shape -> 0",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> reconstruction_shape -> 1",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> reconstruction_shape -> 2",
+            "ok": true,
+            "status": "OK"
+        },
+        {
+            "name": "root -> reconstruction_mae_after_training",
+            "ok": true,
+            "status": "OK"
+        }
+    ]
+}
