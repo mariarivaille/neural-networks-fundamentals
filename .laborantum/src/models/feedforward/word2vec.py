@@ -61,13 +61,9 @@ class HierarchicalSoftmax(torch.nn.Module):
         super().__init__()
         self.embedding_dim = int(embedding_dim)
         self.targets = BinaryIndexTree(vocab_size)
-        decoder_weight = torch.empty(self.targets.num_internal_nodes, self.embedding_dim)
-        torch.nn.init.normal_(decoder_weight, mean=0.0, std=0.02)
-        self.decoder = torch.nn.Embedding(
-            self.targets.num_internal_nodes,
-            self.embedding_dim,
-            _weight=decoder_weight,
-        )
+        self.decoder = torch.nn.Embedding(self.targets.num_internal_nodes, self.embedding_dim)
+        self.decoder = torch.nn.Embedding(self.targets.num_internal_nodes, self.embedding_dim)
+        torch.nn.init.normal_(self.decoder.weight, mean=0.0, std=0.02)
 
     @property
     def num_internal_nodes(self):
@@ -117,15 +113,13 @@ class Word2Vec(torch.nn.Module):
         super().__init__()
         self.vocab_size = int(vocab_size)
         self.embedding_dim = int(embedding_dim)
-        encoder_weight = torch.empty(self.vocab_size, self.embedding_dim)
-        torch.nn.init.normal_(encoder_weight, mean=0.0, std=0.02)
-        self.encoder = torch.nn.Embedding(self.vocab_size, self.embedding_dim, _weight=encoder_weight)
-        self.hierarchical_softmax = HierarchicalSoftmax(
-            self.embedding_dim,
-            self.vocab_size,
-        )
+        self.encoder = torch.nn.Embedding(self.vocab_size, self.embedding_dim)
+        self.hierarchical_softmax = HierarchicalSoftmax(self.embedding_dim, self.vocab_size)
+        self.encoder = torch.nn.Embedding(self.vocab_size, self.embedding_dim)
+        self.hierarchical_softmax = HierarchicalSoftmax(self.embedding_dim, self.vocab_size)
         self.decoder = self.hierarchical_softmax.decoder
         self.num_internal_nodes = self.hierarchical_softmax.num_internal_nodes
+        torch.nn.init.normal_(self.encoder.weight, mean=0.0, std=0.02)
 
     def forward(self, batch):
         center_word = batch['data']['center_word']
