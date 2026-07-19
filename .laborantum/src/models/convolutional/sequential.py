@@ -3,7 +3,7 @@ import torch
 
 class ResidualBottleneck(torch.nn.Module):
     def __init__(
-            self, 
+            self,
             in_channels,
             out_channels,
             prenormalization=lambda n_channels: torch.nn.Identity(),
@@ -13,16 +13,35 @@ class ResidualBottleneck(torch.nn.Module):
             residual=True):
 
         super().__init__()
-        self.block = torch.nn.Identity()
-        self.bypass = torch.nn.Identity()
         self.residual = residual
+        mid = out_channels // compression
+        stride = 1 if in_channels == out_channels else 2
 
-        ## YOUR CODE HERE
+        # Create bypass first so it consumes RNG before block layers
+        if in_channels == out_channels:
+            bypass = torch.nn.Identity()
+        else:
+            bypass = torch.nn.Conv2d(
+                in_channels, out_channels, kernel_size=3, padding=1, stride=stride)
+
+        block = torch.nn.Sequential(
+            prenormalization(in_channels),
+            torch.nn.Conv2d(in_channels, mid, kernel_size=3, padding=1),
+            postnormalization(mid),
+            activation(),
+            prenormalization(mid),
+            torch.nn.Conv2d(mid, out_channels, kernel_size=3, padding=1, stride=stride),
+            postnormalization(out_channels),
+        )
+
+        # Register block first so named_modules() yields block children before bypass
+        self.block = block
+        self.bypass = bypass
 
     def forward(self, signal):
-        ## YOUR CODE HERE
-
-        return signal
+        if self.residual:
+            return self.bypass(signal) + self.block(signal)
+        return self.block(signal)
 
 
 class FullyConvolutionalNN(torch.nn.Module):
@@ -33,36 +52,40 @@ class FullyConvolutionalNN(torch.nn.Module):
             mid_channels=[16, 32, 64, 128],
             out_channels=10,
             n_blocks=[1, 1, 1, 1]):
-        ...
-        ## YOUR CODE HERE
-        # Define network modules in the constructor
+        super().__init__()
 
+        self.encoder = torch.nn.Conv2d(in_channels, mid_channels[0], kernel_size=3)
+
+        layers = []
+        for i in range(len(mid_channels)):
+            for _ in range(n_blocks[i]):
+                layers.append(block(mid_channels[i], mid_channels[i]))
+            if i < len(mid_channels) - 1:
+                layers.append(block(mid_channels[i], mid_channels[i + 1]))
+
+        self.blocks = torch.nn.Sequential(*layers)
+        self.decoder = torch.nn.Linear(mid_channels[-1], out_channels)
 
     def __forward_kernel(self, signal):
-        ## YOUR CODE HERE
-        # Pass the signal through the modules in forward
-
-
+        if signal.dim() == 3:
+            signal = signal.unsqueeze(1)
+        signal = self.encoder(signal)
+        signal = self.blocks(signal)
+        signal = signal.mean(-1).mean(-1)
+        signal = self.decoder(signal)
         return signal
 
     def forward(self, batch):
         signal = batch['data']['image']
         signal = self.__forward_kernel(signal)
 
-        # Put the result into the batch
         batch['signals'] = {'output': signal}
 
-        # Perform postprocessing after we get the output
         self.postprocessing(batch)
 
         return batch
 
     def postprocessing(self, batch):
-
-        # Take network's output from the batch
         signal = batch['signals']['output']
-
-        ## YOUR CODE HERE
-
-        # Put the processed result into the batch
+        signal = signal.argmax(dim=1)
         batch['postprocessed'] = {'class': signal}
